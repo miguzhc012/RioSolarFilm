@@ -1,0 +1,130 @@
+/* =========================
+   RIO SOLAR FILM - HOME
+   ========================= */
+
+/* A home usa o fundo próprio. Isso sobrescreve o fundo neutro do main */
+body.page-home{
+  background: #0b1220; /* base neutra */
+  color: rgba(255,255,255,.95);
+}
+
+.home-section .container{
+  padding-top: 10px;
+}
+
+
+.home-hero{
+  min-height: 100svh; /* ocupa a tela inteira no mobile */
+  background: url("../image/background.png") center/cover no-repeat;
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  padding: 120px 16px 40px; /* respiro abaixo da navbar */
+}
+
+
+.home-hero::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #0b1220);
+}
+
+
+
+/* overlay para contraste e manter legibilidade */
+.home-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.22),
+    rgba(0,0,0,.58)
+  );
+}
+
+/* Card central (vidro) */
+.home-hero-card{
+  position: relative;
+  width: min(920px, 94vw);
+  padding: 44px 22px;
+  border-radius: 18px;
+  background: rgba(17,24,39,.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  text-align: center;
+}
+
+.home-hero-card h1{
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 14px rgba(0,0,0,.45);
+}
+
+.home-hero-card p{
+  color: rgba(255,255,255,.78);
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* Badge (RJ + Niterói) */
+.home-badge{
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.28);
+  border: 1px solid rgba(255,255,255,.14);
+  color: rgba(255,255,255,.92);
+  font-size: .95rem;
+}
+
+/* CTA buttons no hero */
+.home-cta{
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Seção abaixo do hero (ex: cards) */
+.home-section{
+  background: #0b1220;
+  padding: 60px 0;
+}
+
+/* Cards */
+
+.card{
+  background: rgba(17,24,39,.45);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  backdrop-filter: blur(10px);
+  color: rgba(255,255,255,.92);
+  padding: 24px;
+  text-align: center;
+}
+.text-muted{
+  color: rgba(181,181,181) !important;
+}
+
+
+
+
+/* Responsivo */
+@media (max-width: 768px){
+  .home-hero{
+    padding-top: 105px;
+    min-height: 100svh; /* mantém tela cheia no mobile */
+  }
+  .home-hero-card h1{ font-size: 2rem; }
+}
